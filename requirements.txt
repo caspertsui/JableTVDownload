@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 requests==2.25.1
 beautifulsoup4==4.9.3
 m3u8==0.8.0
 pycryptodome==3.17
 selenium
+=======
+requests
+beautifulsoup4
+m3u8
+pycryptodome
+selenium
+cloudscraper
+>>>>>>> a3f9920 (Initial commit)

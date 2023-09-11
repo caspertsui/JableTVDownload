@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 # author: hcjohn463
 #!/usr/bin/env python
+=======
+#!/usr/bin/env python3
+>>>>>>> a3f9920 (Initial commit)
 # coding: utf-8
 from args import *
 from download import download
