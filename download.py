@@ -4,10 +4,7 @@ import os
 import re
 import urllib.request
 import m3u8
-<<<<<<< HEAD
-=======
 import shutil
->>>>>>> a3f9920 (Initial commit)
 from Crypto.Cipher import AES
 from config import headers
 from crawler import prepareCrawl
@@ -18,25 +15,6 @@ from encode import ffmpegEncode
 from args import *
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-<<<<<<< HEAD
-
-def download(url):
-  encode = 0 #不轉檔
-  action = input('要轉檔嗎?(y/n)')
-  if action.lower() == 'y':
-    action = input('要用GPU(Nvidia)加速轉檔嗎?(y/n)')
-    if action.lower() == 'y':
-       encode = 1 #GPU轉檔
-    else:
-       encode = 2 #CPU轉檔
-
-  print('正在下載影片: ' + url)
-  # 建立番號資料夾
-  urlSplit = url.split('/')
-  dirName = urlSplit[-2]
-  if os.path.exists(f'{dirName}/{dirName}.mp4'):
-    print('番號資料夾已存在, 跳過...')
-=======
 from inspect import currentframe
 
 FILENAME = os.path.basename(__file__)
@@ -67,7 +45,6 @@ def download(url):
     print(f'！[{FILENAME}:{LINENO()}] Already exist, skipped.')
     deleteDownloadedURLFromBatch(url)
     print(f'！[{FILENAME}:{LINENO()}] Deleted URL {url} from batch.sh.')
->>>>>>> a3f9920 (Initial commit)
     return
   if not os.path.exists(dirName):
       os.makedirs(dirName)
@@ -81,20 +58,12 @@ def download(url):
   options.add_argument('--headless')
   options.add_argument("user-agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36")
   dr = webdriver.Chrome(options=options)
-<<<<<<< HEAD
-  dr.get(url)
-  result = re.search("https://.+m3u8", dr.page_source)
-  print(f'result: {result}')
-  m3u8url = result[0]
-  print(f'm3u8url: {m3u8url}')
-=======
   print(f"！[{LINENO()}] url: {url}")
   dr.get(url)
   result = re.search("https://.+m3u8", dr.page_source)
   print(f"！[{LINENO()}] result: {result}")
   m3u8url = result[0]
   print(f"！[{LINENO()}] m3u8url: {m3u8url}")
->>>>>>> a3f9920 (Initial commit)
 
   # 得到 m3u8 網址
   m3u8urlList = m3u8url.split('/')

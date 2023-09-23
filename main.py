@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-# author: hcjohn463
-#!/usr/bin/env python
-=======
 #!/usr/bin/env python3
->>>>>>> a3f9920 (Initial commit)
 # coding: utf-8
+#TODO Scrapy links from https://jable.tv/catagories/pantyhose
 from args import *
 from download import download
 from movies import movieLinks

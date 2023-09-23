@@ -1,4 +1,5 @@
 urls=(
+  # https://jable.tv/videos/xxx-nnn/
 )
 find . -type d -empty -delete
 for url in ${urls[@]}; do
