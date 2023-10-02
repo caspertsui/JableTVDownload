@@ -13,3 +13,13 @@ def deleteM3u8(folderPath):
     for file in files:
         if file.endswith('.m3u8'):
             os.remove(os.path.join(folderPath, file))
+
+def deleteDownloadedURLFromBatch(url):
+    with open("batch.sh", "r") as input:
+        with open("temp.sh", "w") as output:
+            for line in input:
+                if str(url) not in line.strip("\n"):
+                    output.write(line)
+    # replace file with original name
+    os.replace('temp.sh', 'batch.sh')
+    os.chmod('batch.sh', 0o744)

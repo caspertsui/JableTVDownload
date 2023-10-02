@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # coding: utf-8
 #TODO Scrapy links from https://jable.tv/catagories/pantyhose
+#TODO Scrapy links from https://jable.tv/hot/
 from args import *
 from download import download
 from movies import movieLinks

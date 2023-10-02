@@ -9,7 +9,7 @@ from Crypto.Cipher import AES
 from config import headers
 from crawler import prepareCrawl
 from merge import mergeMp4
-from delete import deleteM3u8, deleteMp4
+from delete import deleteM3u8, deleteMp4, deleteDownloadedURLFromBatch
 from cover import getCover
 from encode import ffmpegEncode
 from args import *
@@ -21,16 +21,6 @@ FILENAME = os.path.basename(__file__)
 
 def LINENO():
     return currentframe().f_back.f_lineno
-
-def deleteDownloadedURLFromBatch(url):
-    with open("batch.sh", "r") as input:
-        with open("temp.sh", "w") as output:
-            for line in input:
-                if str(url) not in line.strip("\n"):
-                    output.write(line)
-    # replace file with original name
-    os.replace('temp.sh', 'batch.sh')
-    os.chmod('batch.sh', 0o744)
 
 def download(url):
   # encode = 0 #不轉檔
